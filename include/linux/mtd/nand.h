@@ -1,7 +1,7 @@
 /*
  *  linux/include/linux/mtd/nand.h
  *
- *  Copyright © 2000-2010 David Woodhouse <dwmw2@infradead.org>
+ *  Copyright Â© 2000-2010 David Woodhouse <dwmw2@infradead.org>
  *                        Steven J. Hill <sjhill@realitydiluted.com>
  *		          Thomas Gleixner <tglx@linutronix.de>
  *
@@ -321,6 +321,8 @@ struct nand_chip {
 	struct nand_ecc_ctrl ecc;
 	struct nand_buffers *buffers;
 	struct nand_hw_control hwcontrol;
+
+	struct mtd_oob_ops ops;
 
 	uint8_t *bbt;
 	struct nand_bbt_descr *bbt_td;
