@@ -2638,7 +2638,6 @@ static void __init msm7x27a_pm_init(void)
 
 /* For Display */
 extern int panel_type;
-static int init_pico = 0;
 
 void mdp_color_enhancement(struct mdp_reg *reg_seq, int size);
 
@@ -2707,8 +2706,7 @@ static int mipi_panel_power(int on)
 
 	mipi_power_save_on = flag_on;
 
-	if (init_pico != 0)
-		pico_panel_power(on);
+	pico_panel_power(on);
 
 	return 0;
 }
